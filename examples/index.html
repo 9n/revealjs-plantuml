@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/main.scss" />
+    <title>Plantuml plugin for Revealjs</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Class Diagram</h2>
+          <pre>
+                <code class="plantuml">
+                  @startuml
+
+                  abstract class AbstractList
+                  abstract AbstractCollection
+                  interface List
+                  interface Collection
+
+                  List <|-- AbstractList
+                  Collection <|-- AbstractCollection
+
+                  Collection <|- List
+                  AbstractCollection <|- AbstractList
+                  AbstractList <|-- ArrayList
+
+                  class ArrayList {
+                    Object[] elementData
+                    size()
+                  }
+
+                  enum TimeUnit {
+                    DAYS
+                    HOURS
+                    MINUTES
+                  }
+
+                  annotation SuppressWarnings
+
+                  annotation Annotation {
+                    annotation with members
+                    String foo()
+                    String bar()
+                  }
+
+                  @enduml
+                </code>
+              </pre>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+                  ## JSON data
+      
+                  ```plantuml
+                  @startjson
+                  #highlight "lastName"
+                  #highlight "address" / "city"
+                  #highlight "phoneNumbers" / "0" / "number"
+                  {
+                    "firstName": "John",
+                    "lastName": "Smith",
+                    "isAlive": true,
+                    "age": 28,
+                    "address": {
+                      "streetAddress": "21 2nd Street",
+                      "city": "New York",
+                      "state": "NY",
+                      "postalCode": "10021-3100"
+                    },
+                    "phoneNumbers": [
+                      {
+                        "type": "home",
+                        "number": "212 555-1234"
+                      },
+                      {
+                        "type": "office",
+                        "number": "646 555-4567"
+                      }
+                    ],
+                    "children": [],
+                    "spouse": null
+                  }
+                  @endjson
+                  ```
+              </textarea
+          >
+        </section>
+      </div>
+    </div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>

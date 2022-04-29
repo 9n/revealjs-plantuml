@@ -1,0 +1,23 @@
+{
+  "name": "revealjs-plantuml",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/plantuml.esm.js",
+  "type": "module",
+  "source": "src/plantuml.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-examples": "yarn parcel examples/index.html --dist-dir .tmp",
+    "build": "parcel build" 
+  },
+  "author": "Jan Cheng",
+  "license": "MIT",
+  "devDependencies": {
+    "@parcel/transformer-sass": "2.5.0",
+    "parcel": "^2.5.0",
+    "reveal.js": "^4.3.1"
+  },
+  "dependencies": {
+    "plantuml-encoder": "^1.4.0"
+  }
+}
